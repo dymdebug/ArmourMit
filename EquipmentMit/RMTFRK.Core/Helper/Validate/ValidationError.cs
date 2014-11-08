@@ -1,0 +1,26 @@
+﻿using System.Collections.Generic;
+
+namespace RMTFRK.Core.Helper.Validate
+{   
+    /// <summary>
+    /// 验证错误
+    /// </summary>
+    public class ValidationError
+    {
+        public ValidationError() { }
+
+        public string ErrorMessage { get; set; }
+    }
+ 
+    /// <summary>
+    /// 多个验证错误的集合
+    /// </summary>
+    public class ValidationErrors : List<ValidationError>
+    {
+        public void Add(string errorMessage)
+        {
+            base.Add(new ValidationError { ErrorMessage = errorMessage });
+        }
+    }
+  
+}

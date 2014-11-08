@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9468EF52-EF00-4954-BD2E-957BBDD6697C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMTFRK.Core</RootNamespace>
+    <AssemblyName>RMTFRK.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="crypt">
+      <HintPath>..\REFLIB\crypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SQLDMO">
+      <HintPath>..\REFLIB\Interop.SQLDMO.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\REFLIB\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\REFLIB\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\REFLIB\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Auto.cs" />
+    <Compile Include="Data\DataTableHelper.cs" />
+    <Compile Include="Data\ExpandObject.cs" />
+    <Compile Include="Data\ExtensionObject.cs" />
+    <Compile Include="Data\HashtableHelper.cs" />
+    <Compile Include="Data\LogType.cs" />
+    <Compile Include="Data\Metadata.cs" />
+    <Compile Include="Data\PropertyBag.cs" />
+    <Compile Include="Data\ReaderToIListHelper.cs" />
+    <Compile Include="Data\Result.cs" />
+    <Compile Include="Data\SerializationUtils.cs" />
+    <Compile Include="Data\Suggestion.cs" />
+    <Compile Include="Data\SystemTree.cs" />
+    <Compile Include="Data\Utilities.cs" />
+    <Compile Include="Helper\File\ImageHelper.cs" />
+    <Compile Include="Helper\File\ModelConvertHelper.cs" />
+    <Compile Include="Helper\File\NFileHelper.cs" />
+    <Compile Include="Helper\Local\NRmbHelper.cs" />
+    <Compile Include="Helper\File\UXmlHelper.cs" />
+    <Compile Include="Helper\Linq\PredicateExtensions.cs" />
+    <Compile Include="Helper\Net\QMail\Base\Email.cs" />
+    <Compile Include="Helper\Net\QMail\Base\MailJob.cs" />
+    <Compile Include="Helper\Net\QMail\Base\MailQueue.cs" />
+    <Compile Include="Helper\Net\QMail\Base\MailQueueDB.cs" />
+    <Compile Include="Helper\Net\QMail\Config\MailJobElement.cs" />
+    <Compile Include="Helper\Net\QMail\Config\MailQueueElement.cs" />
+    <Compile Include="Helper\Net\QMail\Config\MailSection.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailAddedMailEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailAddingMailEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailDeletedMailEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailDeletingMailEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailDequeueMailEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailErrorEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailErrorType.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailEvent.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailExceedMailMaxTryTimesEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailExceedQueueSizeEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailSendedMailEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\EventHandler\MailSendingMailEventArgs.cs" />
+    <Compile Include="Helper\Net\QMail\MailHelper.cs" />
+    <Compile Include="Helper\Net\QMail\MailManager.cs" />
+    <Compile Include="Helper\Net\QMail\NMailHelper.cs" />
+    <Compile Include="Helper\Security\BarCodeHelper.cs" />
+    <Compile Include="Helper\Security\EncryptHelper.cs" />
+    <Compile Include="Helper\Validate\ValidationError.cs" />
+    <Compile Include="Data\ValueConvert.cs" />
+    <Compile Include="Data\ValueText.cs" />
+    <Compile Include="Data\WFInput.cs" />
+    <Compile Include="Data\XMLHelper.cs" />
+    <Compile Include="Helper\HD\CHDSN.cs" />
+    <Compile Include="Helper\HD\HMACSN_HDSN.cs" />
+    <Compile Include="Helper\DB\AbstractDbFactory.cs" />
+    <Compile Include="Helper\DB\CRunScript.cs" />
+    <Compile Include="Helper\DB\DbAccess.cs" />
+    <Compile Include="Helper\DB\Factory.cs" />
+    <Compile Include="Helper\DB\OdbcFactory.cs" />
+    <Compile Include="Helper\DB\OleDbFactory.cs" />
+    <Compile Include="Helper\DB\SqlFactory.cs" />
+    <Compile Include="Helper\Tool\Base64Provider.cs" />
+    <Compile Include="Helper\Tool\ConvertHelper.cs" />
+    <Compile Include="Helper\File\ConvertHtmlPage.cs" />
+    <Compile Include="Helper\Security\DESProvider.cs" />
+    <Compile Include="Helper\Log\NLogHelper.cs" />
+    <Compile Include="Helper\Security\MD5Provider.cs" />
+    <Compile Include="Helper\DB\PaginationHelper.cs" />
+    <Compile Include="Helper\Validate\RegexHelper.cs" />
+    <Compile Include="Helper\Validate\RegexNormal.cs" />
+    <Compile Include="Helper\Net\QMail\SMTP.cs" />
+    <Compile Include="Helper\Tool\Tools.cs" />
+    <Compile Include="Helper\Validate\TypeHelper.cs" />
+    <Compile Include="Helper\File\XMlHelper.cs" />
+    <Compile Include="Helper\Validate\YZMHelper.cs" />
+    <Compile Include="Helper\Linq\Dynamic.cs" />
+    <Compile Include="Helper\DB\CommandInfo.cs" />
+    <Compile Include="Data\CommonHelper.cs" />
+    <Compile Include="Helper\Config\ConfigHelper.cs" />
+    <Compile Include="Helper\Validate\ConvertHelper.cs" />
+    <Compile Include="Helper\Validate\DateTimeHelper.cs" />
+    <Compile Include="Helper\DB\DbHelperSQL.cs" />
+    <Compile Include="Helper\HD\IPScanerHelper.cs" />
+    <Compile Include="Helper\Log\LogHelper.cs" />
+    <Compile Include="Helper\DB\MySqlHelper.cs" />
+    <Compile Include="Helper\DB\NSqlServerHelper.cs" />
+    <Compile Include="Helper\DB\OracleHelper.cs" />
+    <Compile Include="Helper\Local\PinyinHelper.cs" />
+    <Compile Include="Helper\Config\PubConstant.cs" />
+    <Compile Include="Helper\Local\RMBHelper.cs" />
+    <Compile Include="Helper\DB\SqlFilterHelper.cs" />
+    <Compile Include="Helper\DB\SQLHelper.cs" />
+    <Compile Include="Helper\DB\SqlParam.cs" />
+    <Compile Include="Helper\DB\SqlServerBackup.cs" />
+    <Compile Include="Helper\DB\SqlServerHelper.cs" />
+    <Compile Include="Helper\DB\SqlSourceType.cs" />
+    <Compile Include="Helper\Validate\StringHelper.cs" />
+    <Compile Include="Helper\Linq\NLINQHelper.cs" />
+    <Compile Include="Helper\Log\Logger.cs" />
+    <Compile Include="Helper\Log\LogLevel.cs" />
+    <Compile Include="Helper\Validate\DateFormat.cs" />
+    <Compile Include="Helper\Validate\GeneralFun.cs" />
+    <Compile Include="Helper\Validate\TimeHelper.cs" />
+    <Compile Include="Helper\Validate\TimeParser.cs" />
+    <Compile Include="Helper\Validate\ValidateUtil.cs" />
+    <Compile Include="Interface\IBaseDao.cs" />
+    <Compile Include="Interface\IBaseRepository.cs" />
+    <Compile Include="Interface\IBaseService.cs" />
+    <Compile Include="Interface\IDbHelper.cs" />
+    <Compile Include="Interface\IDbHelperExpand.cs" />
+    <Compile Include="Interface\IDbSession.cs" />
+    <Compile Include="Helper\Linq\CommonEqualityComparer.cs" />
+    <Compile Include="Helper\Linq\FastPropertyComparer.cs" />
+    <Compile Include="Helper\Linq\LINQHelper.cs" />
+    <Compile Include="Helper\Net\QMail\SMTPManager.cs" />
+    <Compile Include="Pattern\DoubLockSigleton.cs" />
+    <Compile Include="Pattern\SingleApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helper\Security\DESEncrypt.cs" />
+    <Compile Include="Helper\Security\EncryptAndDecrypte.cs" />
+    <Compile Include="Helper\Security\Md5Helper.cs" />
+    <Compile Include="Helper\Security\NDESEncrypt.cs" />
+    <Compile Include="Helper\Security\SecurityEncryption.cs" />
+    <Compile Include="Helper\Security\StringSecurity.cs" />
+    <Compile Include="Helper\Validate\TypeParse.cs" />
+    <Compile Include="Helper\Validate\CdateValidate.cs" />
+    <Compile Include="Helper\Validate\GeneralRegxpLib.cs" />
+    <Compile Include="Helper\Validate\IdentityGenerator.cs" />
+    <Compile Include="Helper\DB\PKUtilitys.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Component\" />
+    <Folder Include="Impl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
